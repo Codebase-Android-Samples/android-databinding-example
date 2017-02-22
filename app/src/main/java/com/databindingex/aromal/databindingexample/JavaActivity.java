@@ -7,22 +7,22 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-import com.databindingex.aromal.databindingexample.databinding.MainActivityBinding;
-import com.databindingex.aromal.databindingexample.models.viewmodels.MainViewModel;
+import com.databindingex.aromal.databindingexample.databinding.JavaActivityBinding;
+import com.databindingex.aromal.databindingexample.models.viewmodels.JavaViewModel;
 
-public class MainActivity extends AppCompatActivity {
+public class JavaActivity extends AppCompatActivity {
 
 
     Button submitButton;
 
-    MainViewModel mainViewModel = new MainViewModel();
+    JavaViewModel javaViewModel = new JavaViewModel();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
 
-        final MainActivityBinding mainActivityBinding = DataBindingUtil.setContentView(this,R.layout.activity_main);
-        mainActivityBinding.setMainVM(mainViewModel);
+        final JavaActivityBinding mainActivityBinding = DataBindingUtil.setContentView(this, R.layout.activity_java);
+        mainActivityBinding.setJavaVM(javaViewModel);
 
 
         submitButton = (Button) findViewById(R.id.buttonSubmit);
@@ -31,8 +31,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                mainViewModel.getUsername();
-                Log.e("username","username is "+mainViewModel.getUsername());
+
+                Log.e("username", "username is " + javaViewModel.getUsername());
 
 
             }
